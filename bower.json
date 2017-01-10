@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.1.3",
   "dependencies": {
+    "tangere": "TangereJs/tangere#0.8-preview",
+    "at-doc-viewer": "TangereJs/at-doc-viewer#0.8-preview",
+    "at-theme": "TangereJs/at-theme#0.8-preview",
     "at-carbon-icon": "TangereJs/at-carbon-icon#0.8-preview"
   }
 }
