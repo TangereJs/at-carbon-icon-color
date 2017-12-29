@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>at-carbon-icon-color tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../at-carbon-icon-color.html">
+  <link rel="import" href="../../iron-test-helpers/iron-test-helpers.html" />
+  </head>
+  <body>
+    <test-fixture id="initial">
+      <template>
+        <at-carbon-icon-color></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+
+    <!-- 
+      icon fixtures 
+    -->
+    <test-fixture id="iconIsUndefined">
+      <template>
+        <at-carbon-icon-color icon="undefined"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIsNull">
+      <template>
+        <at-carbon-icon-color icon="null"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIsTrue">
+      <template>
+        <at-carbon-icon-color icon="true"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIsFalse">
+      <template>
+        <at-carbon-icon-color icon="false"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIs-42">
+      <template>
+        <at-carbon-icon-color icon="-42"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIs0">
+      <template>
+        <at-carbon-icon-color icon="0"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIs42">
+      <template>
+        <at-carbon-icon-color icon="42"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIsEmpty">
+      <template>
+        <at-carbon-icon-color icon=""></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIsLorem_ipsum">
+      <template>
+        <at-carbon-icon-color icon="lorem ipsum"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIs{}">
+      <template>
+        <at-carbon-icon-color icon="{}"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIs[]">
+      <template>
+        <at-carbon-icon-color icon="[]"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="iconIsFunction">
+      <template>
+        <at-carbon-icon-color icon="function f() { return undefined; }"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+
+    <!-- 
+      theme fixtures 
+    -->
+    <test-fixture id="colorIsUndefined">
+      <template>
+        <at-carbon-icon-color color="undefined"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIsNull">
+      <template>
+        <at-carbon-icon-color color="null"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIsTrue">
+      <template>
+        <at-carbon-icon-color color="true"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIsFalse">
+      <template>
+        <at-carbon-icon-color color="false"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIs-42">
+      <template>
+        <at-carbon-icon-color color="-42"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIs0">
+      <template>
+        <at-carbon-icon-color color="0"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIs42">
+      <template>
+        <at-carbon-icon-color color="42"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIsEmpty">
+      <template>
+        <at-carbon-icon-color color=""></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIsLorem_ipsum">
+      <template>
+        <at-carbon-icon-color color="lorem ipsum"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIs{}">
+      <template>
+        <at-carbon-icon-color color="{}"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIs[]">
+      <template>
+        <at-carbon-icon-color color="[]"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    <test-fixture id="colorIsFunction">
+      <template>
+        <at-carbon-icon-color color="function f() { return undefined; }"></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="propertyTests">
+      <template>
+        <at-carbon-icon-color></at-carbon-icon-color>
+      </template>
+    </test-fixture>
+    
+  <script>
+    suite('initial value tests', function() {
+      test('initial value', function() {
+        var elt = fixture('initial');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "blue");
+      });
+    });
+
+    // 
+    // Icon attribute tests
+    // 
+    suite("icon attribute tests", function() {
+      test('icon is undefined', function() {
+        var elt = fixture('iconIsUndefined');
+
+        assert.equal(elt.icon, "undefined");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is null', function() {
+        var elt = fixture('iconIsNull');
+
+        assert.equal(elt.icon, "null");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is true', function() {
+        var elt = fixture('iconIsTrue');
+
+        assert.equal(elt.icon, "true");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is false', function() {
+        var elt = fixture('iconIsFalse');
+
+        assert.equal(elt.icon, "false");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is -42', function() {
+        var elt = fixture('iconIs-42');
+
+        assert.equal(elt.icon, "-42");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is 0', function() {
+        var elt = fixture('iconIs0');
+
+        assert.equal(elt.icon, "0");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is 42', function() {
+        var elt = fixture('iconIs42');
+
+        assert.equal(elt.icon, "42");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is empty', function() {
+        var elt = fixture('iconIsEmpty');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is lorem ipsum', function() {
+        var elt = fixture('iconIsLorem_ipsum');
+
+        assert.equal(elt.icon, "lorem ipsum");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is {}', function() {
+        var elt = fixture('iconIs{}');
+
+        assert.equal(elt.icon, "{}");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is []', function() {
+        var elt = fixture('iconIs[]');
+
+        assert.equal(elt.icon, "[]");
+        assert.equal(elt.color, "blue");
+      });
+
+      test('icon is function', function() {
+        var elt = fixture('iconIsFunction');
+
+        assert.equal(elt.icon, "function f() { return undefined; }");
+        assert.equal(elt.color, "blue");
+      });
+    });
+
+    // 
+    // color attribute tests
+    // 
+    suite('color attribute tests', function() {
+      test('color is undefined', function() {
+        var elt = fixture('colorIsUndefined');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "undefined");
+      });
+
+      test('color is null', function() {
+        var elt = fixture('colorIsNull');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "null");
+      });
+
+      test('color is true', function() {
+        var elt = fixture('colorIsTrue');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "true");
+      });
+
+      test('color is false', function() {
+        var elt = fixture('colorIsFalse');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "false");
+      });
+
+      test('color is -42', function() {
+        var elt = fixture('colorIs-42');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "-42");
+      });
+
+      test('color is 0', function() {
+        var elt = fixture('colorIs0');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "0");
+      });
+
+      test('color is 42', function() {
+        var elt = fixture('colorIs42');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "42");
+      });
+
+      test('color is empty', function() {
+        var elt = fixture('colorIsEmpty');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "");
+      });
+      
+      test('color is lorem ipsum', function() {
+        var elt = fixture('colorIsLorem_ipsum');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "lorem ipsum");
+      });
+
+      test('color is {}', function() {
+        var elt = fixture('colorIs{}');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "{}");
+      });
+
+      test('color is []', function() {
+        var elt = fixture('colorIs[]');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "[]");
+      });
+
+      test('color is function', function() {
+        var elt = fixture('colorIsFunction');
+
+        assert.equal(elt.icon, "");
+        assert.equal(elt.color, "function f() { return undefined; }");
+      });
+    });
+
+    suite("tests where properties are set as in code", function() { 
+
+      test('invalid icon values', function() {
+        var elt = fixture('propertyTests');
+
+        var actIconValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }", 
+          undefined, null, true, false, -42, 0, 42, {}, []
+          ];
+
+        var expIconValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+         ];
+
+        for (var i=0; i < actIconValues.length; i++) { 
+          var actIconValue = actIconValues[i];
+          var expIconValue = expIconValues[i];
+
+          elt.icon = actIconValue;
+          assert.deepEqual(elt.icon, expIconValue);
+          assert.deepEqual(elt.color, "blue");
+        }
+      });
+
+      test('invalid color values', function() {
+        var elt = fixture('propertyTests');
+
+        var actColorValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+        ];
+
+        var expColorValues = [ 
+          "undefined", "null", "true", "false", "-42", "0", "42", "", "lorem ipsum", "{}", "[]", "function f() { return undefined; }",
+          undefined, null, true, false, -42, 0, 42, {}, []
+        ];
+
+        for (var j=0; j < actColorValues.length; j++ ) {
+          var actColorValue = actColorValues[j];
+          var expColorValue = expColorValues[j];
+          
+          elt.color = actColorValue;
+          assert.deepEqual(elt.icon, "");
+          assert.deepEqual(elt.color, expColorValue);
+        }
+      });
+
+    });
+  </script>
+  </body>
+</html>

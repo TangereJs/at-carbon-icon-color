@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>at-carbon-icon-color tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../at-carbon-icon-color.html">
+  <link rel="import" href="../../iron-test-helpers/iron-test-helpers.html" />
+</head>
+
+<body>
+  <test-fixture id="propertyTests">
+    <template>
+      <at-carbon-icon-color></at-carbon-icon-color>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('ui interaction tests', function() {
+      
+      test('ui interaction test', function() {
+        var elt = fixture('propertyTests');
+        var ico = Polymer.dom(elt.root).querySelector('at-carbon-icon');
+
+        assert.equal(ico.icon, "");
+        assert.equal(ico.classList.contains("blue"), true);
+
+        elt.icon = "now:about";
+
+        assert.equal(ico.icon, "now:about");
+        assert.equal(ico.classList.contains("blue"), true);
+
+        elt.color = "orange";
+        assert.equal(ico.icon, "now:about");
+        assert.equal(ico.classList.contains("orange"), true);
+      });
+
+    });
+  </script>
+</body>
+</html>
